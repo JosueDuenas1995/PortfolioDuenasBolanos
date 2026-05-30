@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./fonts/Array-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Satoshi', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
+}
+
+/* Ensure text elements transition smoothly during dark mode toggle */
+p, h1, h2, h3, label {
+    transition: color 0.3s ease;
+}
+
+.COA {
+    text-align: center;
+    margin: 50px auto;
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.03); /* Creates a subtle transparent fill */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adds a light border to lock it in a box */
+    border-radius: 16px; /* Softens the corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* Adds a soft drop-shadow for depth */
+    max-width: 900px;
+}
+
+.COA h1 {
+    font-size: 4rem; /* Grows the size of the title */
+    margin-bottom: 20px;
+}
+
+.COA .btn {
+    margin: 10px; /* Separates the space of each button */
+}
+
+.about-me {
+    text-align: center;
+    margin: 50px auto;
+    padding: 50px 30px;
+    background-color: rgba(0, 0, 0, 0.02); /* Very subtle background */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* Soft drop-shadow */
+    max-width: 900px; /* Keeps it contained just like the COA section */
+}
+
+.about-me img {
+    width: 220px; /* Sets a standard size for your profile photo */
+    max-width: 100%; /* Ensures the image scales down on very small screens */
+    height: auto;
+    border-radius: 50%; /* Makes the photo circular */
+    margin: 20px auto;
+    object-fit: cover; /* Prevents the image from stretching weirdly */
+    
+    /* Photo decorations */
+    border: 4px solid white; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.projects {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 1100px; /* Slightly wider to comfortably fit the 3-column grid */
+    padding: 0 20px;
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.02); /* Shares the frosted glass look */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    height: 100%; /* Ensures all cards stretch to the same height */
+    text-align: left; /* Left alignment makes paragraphs easier to read */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Prepares hover animation */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Smoothly lifts the card up when hovered */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Deepens the shadow on hover */
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    text-align: center;
+    margin: 50px auto;
+    padding: 50px 30px;
+    background-color: rgba(0, 0, 0, 0.02); /* Shares the frosted glass look */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+}
+
+/* Footer social links */
+.social-links a {
+    color: #75828e; /* Color gris sutil */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: #0d6efd; /* Cambia al azul primario al pasar el mouse */
+    transform: translateY(-4px); /* Pequeño salto hacia arriba */
+}
+
+/* Header / Navbar styles */
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo ligeramente blanco y transparente */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    padding: 10px 20px;
+    backdrop-filter: blur(10px); /* El verdadero efecto de cristal esmerilado */
+}
+
+.custom-navbar .nav-link {
+    color: #6c757d; /* Gris sutil, mismo del footer */
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #0d6efd; /* Azul primario al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño salto */
+}
+
+/* --- DARK MODE STYLES --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+    color: #ffffff;
+}
+
+/* Override Bootstrap's text-muted and ensure contact info paragraph changes dynamically */
+body.dark-mode .contact-info p,
+body.dark-mode footer p.text-muted {
+    color: #e0e0e0 !important;
+}
+
+/* Update frosted glass to look good on dark backgrounds */
+body.dark-mode .COA,
+body.dark-mode .about-me,
+body.dark-mode .project-card,
+body.dark-mode .contact-info {
+    background-color: rgba(255, 255, 255, 0.05); /* Faint white fill instead of faint black */
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Stronger drop shadow */
+}
+
+body.dark-mode .custom-navbar {
+    background-color: rgba(18, 18, 18, 0.7); /* Dark translucent navbar */
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .custom-navbar .nav-link,
+body.dark-mode .navbar-brand,
+body.dark-mode .social-links a {
+    color: #d1d5db;
+}
+
+body.dark-mode .custom-navbar .nav-link:hover,
+body.dark-mode .social-links a:hover {
+    color: #0d6efd;
+}
+
+/* Make contact form inputs dark-mode friendly */
+body.dark-mode .form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
