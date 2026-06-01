@@ -127,10 +127,6 @@
        
        <form class="mt-4" id="contactForm">
            <div class="mb-3 text-start">
-               <label for="contactName" class="form-label">Name</label>
-               <input type="text" class="form-control" id="contactName" name="name" placeholder="John Doe" required>
-           </div>
-           <div class="mb-3 text-start">
                <label for="contactEmail" class="form-label">Email address</label>
                <input type="email" class="form-control" id="contactEmail" name="email" placeholder="name@example.com" required>
            </div>
@@ -181,7 +177,6 @@
                 // Recoge los datos del formulario automáticamente usando los atributos 'name'
                 const formData = new FormData(contactForm);
                 const data = {
-                    name: formData.get('name'),
                     email: formData.get('email'),
                     message: formData.get('message')
                 };
