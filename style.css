@@ -40,6 +40,22 @@ p, h1, h2, h3, label {
     margin: 10px; /* Separates the space of each button */
 }
 
+/* Custom dynamic button */
+.btn-outline-custom {
+    color: #6c757d;
+    border: 2px solid #6c757d;
+    background-color: transparent;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #ffffff;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
 .about-me {
     text-align: center;
     margin: 50px auto;
@@ -184,4 +200,16 @@ body.dark-mode .form-control {
     background-color: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.2);
     color: #e0e0e0;
+}
+
+/* Dark mode adjustments for custom button */
+body.dark-mode .btn-outline-custom {
+    color: #d1d5db;
+    border-color: #d1d5db;
+}
+
+body.dark-mode .btn-outline-custom:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #ffffff;
 }
