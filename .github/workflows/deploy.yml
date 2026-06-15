@@ -19,8 +19,8 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
-        source: "./*"
-        target: "/var/www/html/"
+        source: "*"  # add everything in the root of the rep
+        target: "/var/www/portfolio-frontend"
         strip_components: 0
 
     - name: Fix Permissions on Server
@@ -30,5 +30,5 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo chmod -R 755 /var/www/html
-          sudo chown -R ubuntu:ubuntu /var/www/html
+          sudo chmod -R 755 /var/www/portfolio-frontend
+          sudo chown -R ubuntu:ubuntu /var/www/portfolio-frontend
